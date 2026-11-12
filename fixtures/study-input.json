@@ -1,0 +1,147 @@
+{
+  "scenario": {
+    "version": 1,
+    "horizon": 48,
+    "wards": [
+      {
+        "id": "north",
+        "specialty": "care",
+        "beds": 2,
+        "accessible": 1,
+        "initial": [
+          "p1",
+          "p2"
+        ]
+      },
+      {
+        "id": "south",
+        "specialty": "care",
+        "beds": 1,
+        "accessible": 1,
+        "initial": []
+      }
+    ],
+    "closures": [
+      {
+        "id": "upgrade",
+        "ward": "north",
+        "start": 4,
+        "end": 16,
+        "beds": 2,
+        "accessible": 1,
+        "requires": [],
+        "mode": "relocate"
+      }
+    ],
+    "patients": [
+      {
+        "id": "p1",
+        "arrival": 0,
+        "stay": 12,
+        "specialty": "care",
+        "accessible": true,
+        "priority": 3,
+        "patience": 20
+      },
+      {
+        "id": "p2",
+        "arrival": 0,
+        "stay": 20,
+        "specialty": "care",
+        "accessible": false,
+        "priority": 1,
+        "patience": 20
+      },
+      {
+        "id": "p3",
+        "arrival": 1,
+        "stay": 8,
+        "specialty": "care",
+        "accessible": true,
+        "priority": 2,
+        "patience": 15
+      },
+      {
+        "id": "p4",
+        "arrival": 4,
+        "stay": 6,
+        "specialty": "care",
+        "accessible": false,
+        "priority": 5,
+        "patience": 10
+      },
+      {
+        "id": "p5",
+        "arrival": 16,
+        "stay": 5,
+        "specialty": "care",
+        "accessible": true,
+        "priority": 1,
+        "patience": 10
+      },
+      {
+        "id": "p6",
+        "arrival": 48,
+        "stay": 3,
+        "specialty": "care",
+        "accessible": false,
+        "priority": 0,
+        "patience": 0
+      }
+    ],
+    "policy": {
+      "queue": "priority",
+      "reserve_accessible": false,
+      "max_events": 100000
+    }
+  },
+  "profile": {
+    "count": 3,
+    "specialty": "care",
+    "accessible_pct": 20,
+    "stay": [
+      {
+        "value": 2,
+        "weight": 8
+      },
+      {
+        "value": 18,
+        "weight": 1
+      }
+    ],
+    "patience": 20,
+    "priority": [
+      {
+        "value": 1,
+        "weight": 1
+      }
+    ]
+  },
+  "study": {
+    "arrival_grid": [
+      0,
+      12,
+      24,
+      36
+    ],
+    "arrival_weights": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "tilted_arrival_weights": [
+      7,
+      1,
+      1,
+      1
+    ],
+    "tilted_stay_weights": [
+      1,
+      4
+    ],
+    "queue_threshold": 2,
+    "replicates": 200,
+    "seed": 41128
+  }
+}
